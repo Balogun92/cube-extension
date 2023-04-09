@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "yIdR7wTCFdMRLxuA9D0zvt2cwk0vDE3l18t2XzqmsJA=",
+  "Source": "CubeExtension.API",
+  "BasePath": "_content/CubeExtension.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -21,12 +21,62 @@ namespace CubeExtension.API.Controllers
             try
             {
                 var res = await _service.Add(req);
-                return Ok(res);
+                return Ok(new ResponseDTO
+                {
+                    Data = res,
+                    Message = "success",
+                    Status = true
+                });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(ex.Message ?? ex.InnerException?.Message);
             }
         }
+
+
+        //to delete
+        [HttpDelete]
+        public async Task<IActionResult> Delete(string id)
+        {
+            try
+            {
+                var res = await _service.Delete(id);
+                return Ok(new ResponseDTO
+                {
+                    Data = res,
+                    Message = "success",
+                    Status = true
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message ?? ex.InnerException?.Message);
+            }
+        }
+
+
+
+        //to get
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                var res = await _service.Get();
+                return Ok(new ResponseDTO
+                {
+                    Data = res,
+                    Message = "Success",
+                    Status = true
+                });
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message ?? ex.InnerException?.Message);
+            }
+        }
+
+
     }
 }
